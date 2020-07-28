@@ -22,18 +22,18 @@ public final class TypeTransfer {
     private TypeTransfer() {}
 
     public static void transfer(Object obj, StringBuilder sb, ParseConfig annotation) throws IllegalArgumentException, IllegalAccessException {
-        if (isCustomObj(obj)) {
-            ObjectParse.parse(obj, sb);
-        } else if (isNumber(obj)) {
-            sb.append(obj);
-        } else if (isString(obj) || isChar(obj)) {
-            StrParse.parse(obj, sb);
-        } else if (isCollection(obj)) {
+        if (isCollection(obj)) {
             CollectionParse.parse((Collection<?>) obj, sb);
         } else if (isMap(obj)) {
             MapParse.parse((Map<?, ?>) obj, sb);
         } else if (isArray(obj)) {
             ArrayParse.parse(sb, (Object[]) obj);
+        } else if (isCustomObj(obj)) {
+            ObjectParse.parse(obj, sb);
+        } else if (isNumber(obj)) {
+            sb.append(obj);
+        } else if (isString(obj) || isChar(obj)) {
+            StrParse.parse(obj, sb);
         } else if (isDate(obj)) {
             DateParse.parseDate(obj, sb, annotation);
         } else if (isLocalDate(obj)) {

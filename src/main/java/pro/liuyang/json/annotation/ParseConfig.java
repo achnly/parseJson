@@ -19,16 +19,19 @@ public @interface ParseConfig {
      *  yyyy-MM-dd
      *  yyyy-MM-dd HH:mm
      *  yyyyMMddHHmmssSSS
+     * @return 默认空字符
      */
     String dateFormat() default "";
 
     /**
      * 忽略属性值开关，false：取消忽略，true：开启忽略
+     * @return 返回布尔类型开关
      */
     boolean ignoreSwitch() default false;
 
     /**
      * 如果 ignoreSwitch 为开启状态，那么改属性值将替换原对象属性值
+     * @return 返回忽略语
      */
     String ignore() default "忽略属性值";
 

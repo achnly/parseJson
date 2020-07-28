@@ -15,6 +15,9 @@ public class ParamParse {
     /**
      * 解析为Json
      * @param param 需要解析的对象
+     * @return Json字符串
+     * @throws IllegalArgumentException 非法参数异常
+     * @throws IllegalAccessException 非法访问异常
      */
     public static String toJson(Object param) throws IllegalArgumentException, IllegalAccessException {
         StringBuilder sb = new StringBuilder();

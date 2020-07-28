@@ -96,6 +96,7 @@ public class ReflectUtil {
     /**
      * 获得一个类中所有字段列表，直接反射获取，无缓存
      * @param beanClass           类
+     * @return 属性数组
      */
     public static Field[] getFieldsDirectly(Class<?> beanClass) throws SecurityException {
         if (Objects.isNull(beanClass)) {
@@ -110,6 +111,7 @@ public class ReflectUtil {
      * @param obj       对象，如果static字段，此处为类
      * @param fieldName 字段名
      * @return 字段值
+     * @throws IllegalAccessException 非法访问异常
      */
     public static Object getFieldValue(Object obj, String fieldName) throws IllegalAccessException {
         if (null == obj || null == fieldName || CommonConstant.EMPTY.equals(fieldName)) {
@@ -123,6 +125,7 @@ public class ReflectUtil {
      *
      * @param field 字段
      * @return 字段值
+     * @throws IllegalAccessException 非法访问异常
      */
     public static Object getStaticFieldValue(Field field) throws IllegalAccessException {
         return getFieldValue(null, field);
@@ -134,6 +137,7 @@ public class ReflectUtil {
      * @param obj   对象，static字段则此字段为null
      * @param field 字段
      * @return 字段值
+     * @throws IllegalAccessException 非法访问异常
      */
     public static Object getFieldValue(Object obj, Field field) throws IllegalAccessException {
         if (null == field) {
@@ -158,6 +162,7 @@ public class ReflectUtil {
      *
      * @param obj bean对象，如果是static字段，此处为类class
      * @return 字段值数组
+     * @throws IllegalAccessException 非法访问异常
      */
     public static Object[] getFieldsValue(Object obj) throws IllegalAccessException {
         if (null != obj) {

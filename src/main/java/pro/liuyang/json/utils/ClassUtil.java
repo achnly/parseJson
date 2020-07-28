@@ -16,6 +16,8 @@ public class ClassUtil {
      * 是否为JDK中定义的类或接口，判断依据：
      * 1、以java.、javax.开头的包名
      * 2、ClassLoader为null
+     * @param clazz clazz对象
+     * @return 布尔对象，表示是否为JDK类或接口
      */
     public static boolean isJdkClass(Class<?> clazz) {
         if (null == clazz) {
@@ -33,6 +35,8 @@ public class ClassUtil {
 
     /**
      * 是否非JDK中定义的类或接口，判断依据：
+     * @param clazz clazz对象
+     * @return 布尔对象，表示是否为JDK类或接口
      */
     public static boolean isNotJdkClass(Class<?> clazz) {
         return !isJdkClass(clazz);
@@ -42,6 +46,8 @@ public class ClassUtil {
      * 是否为JDK中定义的类或接口，判断依据：
      * 1、以java.、javax.开头的包名
      * 2、ClassLoader为null
+     * @param obj object对象
+     * @return 布尔对象，表示是否为JDK类或接口
      */
     public static boolean isJdkClass(Object obj) {
         if (null == obj) {
@@ -54,6 +60,8 @@ public class ClassUtil {
      * 是否为JDK中定义的类或接口，判断依据：
      * 1、以java.、javax.开头的包名
      * 2、ClassLoader为null
+     * @param obj object对象
+     * @return 布尔对象，表示是否为JDK类或接口
      */
     public static boolean isNotJdkClass(Object obj) {
         return !isJdkClass(obj);

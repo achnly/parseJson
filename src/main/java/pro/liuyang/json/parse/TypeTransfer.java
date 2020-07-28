@@ -21,7 +21,7 @@ public final class TypeTransfer {
 
     private TypeTransfer() {}
 
-    public static void transfer(Object obj, StringBuilder sb, ParseConfig annotation) throws IllegalArgumentException, IllegalAccessException {
+    public static void transfer(Object obj, StringBuilder sb, ParseConfig annotation) throws IllegalAccessException {
         if (isCollection(obj)) {
             CollectionParse.parse((Collection<?>) obj, sb);
         } else if (isMap(obj)) {
@@ -43,7 +43,7 @@ public final class TypeTransfer {
         } else if (isLocalTime(obj)) {
             DateParse.parseTime(obj, sb, annotation);
         } else {
-            throw new IllegalArgumentException("unknown type param!");
+            ObjectParse.parse(obj, sb);
         }
     }
 
@@ -68,7 +68,7 @@ public final class TypeTransfer {
     }
 
     private static boolean isArray(Object obj) {
-        return obj.getClass().isArray();
+        return Objects.nonNull(obj) && obj.getClass().isArray();
     }
 
     private static boolean isCustomObj(Object obj) {
@@ -89,6 +89,9 @@ public final class TypeTransfer {
 
     private static boolean isLocalTime(Object obj) {
         return obj instanceof LocalTime;
+    }
+    private static boolean isObject(Object obj) {
+        return obj != null;
     }
 
 }

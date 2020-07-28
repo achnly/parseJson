@@ -15,7 +15,7 @@ public class CollectionParse {
 
     private CollectionParse() {}
 
-    public static void parse(Collection<?> list, StringBuilder sb)  throws IllegalArgumentException, IllegalAccessException {
+    public static void parse(Collection<?> list, StringBuilder sb) throws IllegalAccessException {
         sb.append(CommonConstant.LEFT_PARENTHESES_ARR);
         Iterator<?> iterator = list.iterator();
         while (true) {

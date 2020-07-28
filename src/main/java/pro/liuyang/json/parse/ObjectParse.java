@@ -18,30 +18,36 @@ public class ObjectParse {
 
     private ObjectParse() {}
 
-    public static void parse(Object obj, StringBuilder sb) throws IllegalArgumentException, IllegalAccessException {
+    public static void parse(Object obj, StringBuilder sb) throws IllegalAccessException {
+        if (obj == null) {
+            sb.append(CommonConstant.NULL);
+            return;
+        }
         Class<?> clazz = obj.getClass();
-        Field[] fields = ReflectUtil.getFields(clazz);
-        int len = fields.length;
         sb.append(CommonConstant.LEFT_PARENTHESES_OBJ);
-        for (int i = 0; i < len; i++) {
-            Field field = fields[i];
-            Object value = ReflectUtil.getFieldValue(obj, field);
-            if (i != 0 && Objects.nonNull(value)) {
-                sb.append(CommonConstant.COMMA);
-            }
-            if (Objects.nonNull(value)) {
-                String name = ReflectUtil.getFieldName(field);
-                sb.append(CommonConstant.DOUBLE_QUOTATION_MARKS).append(name).append(CommonConstant.DOUBLE_QUOTATION_MARKS);
-                sb.append(CommonConstant.COLON);
-                ParseConfig annotation = null;
-                if (field.isAnnotationPresent(ParseConfig.class)) {
-                    annotation = field.getAnnotation(ParseConfig.class);
-                    if (annotation.ignoreSwitch()) {
-                        sb.append(CommonConstant.DOUBLE_QUOTATION_MARKS).append(annotation.ignore()).append(CommonConstant.DOUBLE_QUOTATION_MARKS);
-                        continue;
-                    }
+        if (clazz != Object.class) {
+            Field[] fields = ReflectUtil.getFields(clazz);
+            int len = fields.length;
+            for (int i = 0; i < len; i++) {
+                Field field = fields[i];
+                Object value = ReflectUtil.getFieldValue(obj, field);
+                if (i != 0 && Objects.nonNull(value)) {
+                    sb.append(CommonConstant.COMMA);
                 }
-                TypeTransfer.transfer(value, sb, annotation);
+                if (Objects.nonNull(value)) {
+                    String name = ReflectUtil.getFieldName(field);
+                    sb.append(CommonConstant.DOUBLE_QUOTATION_MARKS).append(name).append(CommonConstant.DOUBLE_QUOTATION_MARKS);
+                    sb.append(CommonConstant.COLON);
+                    ParseConfig annotation = null;
+                    if (field.isAnnotationPresent(ParseConfig.class)) {
+                        annotation = field.getAnnotation(ParseConfig.class);
+                        if (annotation.ignoreSwitch()) {
+                            sb.append(CommonConstant.DOUBLE_QUOTATION_MARKS).append(annotation.ignore()).append(CommonConstant.DOUBLE_QUOTATION_MARKS);
+                            continue;
+                        }
+                    }
+                    TypeTransfer.transfer(value, sb, annotation);
+                }
             }
         }
         sb.append(CommonConstant.RIGHT_PARENTHESES_OBJ);

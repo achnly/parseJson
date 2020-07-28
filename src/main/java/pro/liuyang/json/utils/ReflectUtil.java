@@ -148,13 +148,7 @@ public class ReflectUtil {
             obj = null;
         }
         setAccessible(field);
-        Object result;
-        try {
-            result = field.get(obj);
-        } catch (IllegalAccessException e) {
-            throw new IllegalAccessException("IllegalAccess for " + field.getDeclaringClass() + "," + field.getName());
-        }
-        return result;
+        return field.get(obj);
     }
 
     /**

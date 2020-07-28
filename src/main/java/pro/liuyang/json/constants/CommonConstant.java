@@ -28,4 +28,6 @@ public interface CommonConstant {
 
     String JAVAX = "javax";
 
+    String NULL = "null";
+
 }

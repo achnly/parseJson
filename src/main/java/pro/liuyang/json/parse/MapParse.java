@@ -15,7 +15,7 @@ public class MapParse {
 
     private MapParse() {}
 
-    public static void parse(Map<?, ?> map, StringBuilder sb) throws IllegalArgumentException, IllegalAccessException  {
+    public static void parse(Map<?, ?> map, StringBuilder sb) throws IllegalAccessException {
         sb.append(CommonConstant.LEFT_PARENTHESES_OBJ);
         Iterator<? extends Map.Entry<?, ?>> iterator = map.entrySet().iterator();
         while (true) {

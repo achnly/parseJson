@@ -1,5 +1,11 @@
 package pro.liuyang.json.constants;
 
+/**
+ * 常量类
+ * @author Yang.Liu
+ * @version 1.0
+ * 2020-07-28
+ */
 public interface CommonConstant {
 
     String LEFT_PARENTHESES_OBJ = "{";

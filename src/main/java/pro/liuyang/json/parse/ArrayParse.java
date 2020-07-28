@@ -2,6 +2,12 @@ package pro.liuyang.json.parse;
 
 import pro.liuyang.json.constants.CommonConstant;
 
+/**
+ * 解析数组
+ * @author Yang.Liu
+ * @version 1.0
+ * 2020-07-28
+ */
 public class ArrayParse {
 
     private ArrayParse() {}

@@ -2,6 +2,12 @@ package pro.liuyang.json.annotation;
 
 import java.lang.annotation.*;
 
+/**
+ * 解析配置注解
+ * @author Yang.Liu
+ * @version 1.0
+ * 2020-07-28
+ */
 @Documented
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)

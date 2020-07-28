@@ -11,6 +11,12 @@ import java.util.Date;
 import java.util.Map;
 import java.util.Objects;
 
+/**
+ * 类型中转中心
+ * @author Yang.Liu
+ * @version 1.0
+ * 2020-07-28
+ */
 public final class TypeTransfer {
 
     private TypeTransfer() {}

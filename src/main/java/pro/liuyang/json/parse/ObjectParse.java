@@ -8,6 +8,12 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.Objects;
 
+/**
+ * 解析对象
+ * @author Yang.Liu
+ * @version 1.0
+ * 2020-07-28
+ */
 public class ObjectParse {
 
     private ObjectParse() {}

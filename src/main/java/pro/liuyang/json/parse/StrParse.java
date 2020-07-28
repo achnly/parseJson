@@ -3,6 +3,12 @@ package pro.liuyang.json.parse;
 
 import pro.liuyang.json.constants.CommonConstant;
 
+/**
+ * 解析字符
+ * @author Yang.Liu
+ * @version 1.0
+ * 2020-07-28
+ */
 public class StrParse {
 
     private StrParse() {}

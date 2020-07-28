@@ -5,6 +5,12 @@ import pro.liuyang.json.constants.CommonConstant;
 import java.util.Iterator;
 import java.util.Map;
 
+/**
+ * 解析键值对容器
+ * @author Yang.Liu
+ * @version 1.0
+ * 2020-07-28
+ */
 public class MapParse {
 
     private MapParse() {}

@@ -5,6 +5,12 @@ import pro.liuyang.json.constants.CommonConstant;
 import java.util.Collection;
 import java.util.Iterator;
 
+/**
+ * 解析集合容器
+ * @author Yang.Liu
+ * @version 1.0
+ * 2020-07-28
+ */
 public class CollectionParse {
 
     private CollectionParse() {}

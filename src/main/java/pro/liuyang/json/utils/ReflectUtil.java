@@ -7,6 +7,12 @@ import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Field;
 import java.util.*;
 
+/**
+ * 反射工具类
+ * @author Yang.Liu
+ * @version 1.0
+ * 2020-07-28
+ */
 public class ReflectUtil {
 
     /**

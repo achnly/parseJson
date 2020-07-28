@@ -11,6 +11,12 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Objects;
 
+/**
+ * 解析时间
+ * @author Yang.Liu
+ * @version 1.0
+ * 2020-07-28
+ */
 public class ParseConfigUtil {
 
     private ParseConfigUtil() {}

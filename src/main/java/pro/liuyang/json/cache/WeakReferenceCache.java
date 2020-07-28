@@ -6,6 +6,12 @@ import java.util.Map;
 import java.util.WeakHashMap;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
+/**
+ * 可自动清理的本地缓存
+ * @author Yang.Liu
+ * @version 1.0
+ * 2020-07-28
+ */
 public final class WeakReferenceCache<K, V> implements Iterable<Map.Entry<K, V>>, Serializable {
 
     private static final long serialVersionUID = 1L;
